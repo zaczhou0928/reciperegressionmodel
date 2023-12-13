@@ -30,7 +30,7 @@ By the time of making predictions, features such as ‘n_ingredients’, ‘nutr
 
 Most data cleaning processes are done in our EDA project, which is included in this website. On top of that, we have implemented some additional data cleanings to facilitate our prediction.
 
-Dropping/Adding columns: We dropped ‘rating’ column because it is irrelevant to our prediction problem, and we added ‘tags’ column back.
+Adding columns: We added ‘tags’ column back.
 
 Encoding ‘tags’: We transformed the ‘tag’ column from strings into lists, which is a more usable format. This is accomplished with one-hot encoding.
 
