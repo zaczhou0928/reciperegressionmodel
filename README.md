@@ -32,7 +32,7 @@ Most data cleaning processes are done in our EDA project, which is included in t
 
 Adding columns: We added ‘tags’ column back.
 
-Encoding ‘tags’: We transformed the ‘tag’ column from strings into lists, which is a more usable format. This is accomplished with one-hot encoding.
+Encoding ‘tags’: We transformed the ‘tag’ column from strings into lists, which is a more usable format.
 
 # Baseline Model
 
@@ -40,7 +40,7 @@ In the baseline model, we employed a linear regression algorithm encapsulated wi
 
 ## Features in the Model:
 
-Our baseline model includes two features: ‘tags’ and ‘n_ingredients’. The two features are categorical nominal and quantitative discrete features respectively.
+Our baseline model includes two features: ‘tags’ and ‘n_ingredients’. The two features are categorical nominal feature and quantitative discrete feature respectively.
 
 ## Feature Encoding:
 
