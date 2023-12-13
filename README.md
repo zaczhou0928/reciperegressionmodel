@@ -84,10 +84,12 @@ Here's a plot visualization of the distrubtion of **'calories'** variable:
 Here's a plot visualization of the distribution of **minutes** variable:
 <iframe src="assests/minutes-hist.html" width=800 height=600 frameBorder=0></iframe>
 
+
 Experiment 2 (Baseline + Log Minutes + Time-to-Make): In the second model, we retained the log transformation for **'minutes'** and introduced the **'time-to-make'** tag as a categorical variable. This tag could imply the relative quickness or lengthiness of a recipe's preparation time, which we theorized might have a relationship with the number of steps involved.
 
 Here's a plot visualization of the distrubtion of **'n_steps'** variable with and without tag **'time-to-make'**:
 <iframe src="assests/time-to-make-hist.html" width=800 height=600 frameBorder=0></iframe>
+
 
 Experiment 3 (Quantile Transformed Features + Tags): The third experiment diverged by applying a Quantile Transformation to both **'n_ingredients'** and **'minutes'**, which normalizes their distribution and can reveal more subtle associations between features and the target variable. Additionally, we encoded **'easy'** and **'time-to-make'** tags to assess their individual contributions to predicting the number of preparation steps.
 
@@ -288,6 +290,8 @@ Below is a performance table summarizing the test results for different hyperpar
 |  30 | {'Forest__criterion': 'friedman_mse', 'Forest__max_depth': 8, 'Forest__n_estimators': 350, 'Forest__n_jobs': -1}  | 0.32096    |
 |  31 | {'Forest__criterion': 'friedman_mse', 'Forest__max_depth': 8, 'Forest__n_estimators': 475, 'Forest__n_jobs': -1}  | 0.321078   |
 
+**Note:** This table is sorted by the R-square score.
+
 The best-performing hyperparameters were:
 
 **max_depth: 8**, controlling the depth of each tree and thus preventing the model from becoming overly complex.
@@ -309,3 +313,5 @@ The performance of our final model is as follow:
 The performance demonstrates a clear improvement over the baseline model. With an R-Squared score of approximately 0.33 on both the training and testing datasets, the final model accounts for a third of the variance in the number of recipe steps, a substantial increase from the baseline model's 0.22. This improvement indicates that the additional features and the robustness of the Random Forest Regressor have captured more of the underlying patterns within our data.
 
 # Fairness
+
+<iframe src="assests/permutation.html" width=800 height=600 frameBorder=0></iframe>
