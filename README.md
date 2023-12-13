@@ -78,16 +78,16 @@ Experiment 1 (Baseline + Log Minutes + Calories): This model expanded upon the b
 
 Here's a plot visualization of the distrubtion of **'calories'** variable:
 
-<iframe src="picture/calories-hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assests/calories-hist.html" width=800 height=600 frameBorder=0></iframe>
 
 
 Here's a plot visualization of the distribution of **minutes** variable:
-<iframe src="picture/minutes-hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assests/minutes-hist.html" width=800 height=600 frameBorder=0></iframe>
 
 Experiment 2 (Baseline + Log Minutes + Time-to-Make): In the second model, we retained the log transformation for **'minutes'** and introduced the **'time-to-make'** tag as a categorical variable. This tag could imply the relative quickness or lengthiness of a recipe's preparation time, which we theorized might have a relationship with the number of steps involved.
 
 Here's a plot visualization of the distrubtion of **'n_steps'** variable with and without tag **'time-to-make'**:
-<iframe src="picture/time-to-make-hist.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assests/time-to-make-hist.html" width=800 height=600 frameBorder=0></iframe>
 
 Experiment 3 (Quantile Transformed Features + Tags): The third experiment diverged by applying a Quantile Transformation to both **'n_ingredients'** and **'minutes'**, which normalizes their distribution and can reveal more subtle associations between features and the target variable. Additionally, we encoded **'easy'** and **'time-to-make'** tags to assess their individual contributions to predicting the number of preparation steps.
 
