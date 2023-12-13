@@ -2,7 +2,7 @@
 
 # Framing the problem
 
-## Prediction problem & type
+## Prediction Problem & Type
 
 This project is centered around the prediction of the number of preparation steps ‘n_steps’ necessary for completing a recipe. This is a regression problem because ‘n_steps’ is a continuous variable.
 
