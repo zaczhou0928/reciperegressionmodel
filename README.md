@@ -74,7 +74,7 @@ The relatively similar R-squared scores for both the training and testing datase
 
 In the final model development phase, we experimented with various features in conjunction with linear regression to determine their predictive power. These experiments included:
 
-Experiment 1 (Baseline + Log Minutes + Calories): This model expanded upon the baseline by integrating a logarithmic transformation of the **'minutes'** feature, which aimed to smooth out the skewness often present in time-related data, and the **'calories'** feature, to investigate a potential correlation with the complexity of the recipe.
+**Experiment 1 (Baseline + Log Minutes + Calories)**: This model expanded upon the baseline by integrating a logarithmic transformation of the **'minutes'** feature, which aimed to smooth out the skewness often present in time-related data, and the **'calories'** feature, to investigate a potential correlation with the complexity of the recipe.
 
 Here's a plot visualization of the distrubtion of **'calories'** variable:
 
@@ -85,13 +85,13 @@ Here's a plot visualization of the distribution of **minutes** variable:
 <iframe src="assests/minutes-hist.html" width=800 height=600 frameBorder=0></iframe>
 
 
-Experiment 2 (Baseline + Log Minutes + Time-to-Make): In the second model, we retained the log transformation for **'minutes'** and introduced the **'time-to-make'** tag as a categorical variable. This tag could imply the relative quickness or lengthiness of a recipe's preparation time, which we theorized might have a relationship with the number of steps involved.
+**Experiment 2 (Baseline + Log Minutes + Time-to-Make)**: In the second model, we retained the log transformation for **'minutes'** and introduced the **'time-to-make'** tag as a categorical variable. This tag could imply the relative quickness or lengthiness of a recipe's preparation time, which we theorized might have a relationship with the number of steps involved.
 
 Here's a plot visualization of the distrubtion of **'n_steps'** variable with and without tag **'time-to-make'**:
 <iframe src="assests/time-to-make-hist.html" width=800 height=600 frameBorder=0></iframe>
 
 
-Experiment 3 (Quantile Transformed Features + Tags): The third experiment diverged by applying a Quantile Transformation to both **'n_ingredients'** and **'minutes'**, which normalizes their distribution and can reveal more subtle associations between features and the target variable. Additionally, we encoded **'easy'** and **'time-to-make'** tags to assess their individual contributions to predicting the number of preparation steps.
+**Experiment 3 (Quantile Transformed Features + Tags)**: The third experiment diverged by applying a Quantile Transformation to both **'n_ingredients'** and **'minutes'**, which normalizes their distribution and can reveal more subtle associations between features and the target variable. Additionally, we encoded **'easy'** and **'time-to-make'** tags to assess their individual contributions to predicting the number of preparation steps.
 
 Below is a performance table for the three modified models we illustrated:
 
@@ -337,7 +337,7 @@ The **test statistic** was the absolute difference in R-squared values between G
 
 We set a **significance level** at 0.05, which is a standard threshold for detecting a meaningful discrepancy in statistical testing.
 
-**Results**:
+## Results:
 Below is a distribution of our test statistics from the permutation test.
 
 <iframe src="assests/permutation.html" width=800 height=600 frameBorder=0></iframe>
@@ -349,6 +349,6 @@ The p-value obtained from our permutation test was 0.02, which is below the sign
 
 Given these findings, we might consider examining the model further to understand the sources of this discrepancy and explore ways to ensure that it performs equitably across different recipe categories.
 
-**Conclusion**:
+## Conclusion:
 
 In conclusion, while our permutation test results indicate a statistically significant difference in the performance of our model between recipes tagged 'healthy' and those not, this does not conclusively establish bias. It does, however, warrant a closer look into the model's behavior and suggests that adjustments may be necessary to achieve fairer outcomes.
