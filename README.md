@@ -58,6 +58,7 @@ Considering that the number of ingredients (**'n_ingredients'**) might have a no
 The model's performance was evaluated using the R-squared metric, and the results are as follow:
 
 **R-Squared for training dataset: 0.2298318956507721**
+
 **R-Squared for testing dataset: 0.23454040104808938**
 
 These scores indicate that around 22% of the variance in the number of steps can be explained by the model for both the training and testing sets.
@@ -315,6 +316,7 @@ These parameters were selected because they balance the bias-variance trade-off 
 The performance of our final model is as follow:
  
 **R-Squared for training dataset: 0.33910338100218707**
+
 **R-Squared for testing dataset: 0.32649396208975057**
 
 The performance demonstrates a clear improvement over the baseline model. With an R-Squared score of approximately 0.33 on both the training and testing datasets, the final model accounts for a third of the variance in the number of recipe steps, a substantial increase from the baseline model's 0.22. This improvement indicates that the additional features and the robustness of the Random Forest Regressor have captured more of the underlying patterns within our data.
