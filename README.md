@@ -18,9 +18,9 @@ Moreover, since the number of steps serves as a proxy for the recipe’s difficu
 
 ## Metric for Evaluation: 
 
-Our model's performance will be assessed using the R-squared (R²) statistic, which is particularly well-suited for regression problems. The R² metric measures the proportion of variance in the number of steps (`n_steps`) that can be explained by the independent variables in the model. 
+Our model's performance will be assessed using the R-squared (`R²`) statistic, which is particularly well-suited for regression problems. The R² metric measures the proportion of variance in the number of steps (`n_steps`) that can be explained by the independent variables in the model. 
 
-R² is chosen over other potential metrics, such as Mean Squared Error (MSE) or Mean Absolute Error (MAE), because it provides an intuitive understanding of the model's predictive accuracy in percentage terms. A higher R² value would indicate a model that closely matches the observed data, which in this context means accurately predicting the number of steps needed for a recipe. It allows us to quantify the effectiveness of our feature selection and the model's ability to generalize from the provided data to unseen recipes, ensuring that users receive reliable step count estimates that can inform their cooking plans and expectations.
+R² is chosen over other potential metrics, such as Mean Squared Error (`MSE`) or Mean Absolute Error (`MAE`), because it provides an intuitive understanding of the model's predictive accuracy in percentage terms. A higher R² value would indicate a model that closely matches the observed data, which in this context means accurately predicting the number of steps needed for a recipe. It allows us to quantify the effectiveness of our feature selection and the model's ability to generalize from the provided data to unseen recipes, ensuring that users receive reliable step count estimates that can inform their cooking plans and expectations.
 
 ## Justification for Feature Selection:
 
@@ -28,7 +28,7 @@ By the time of making predictions, features such as **‘n_ingredients’**, **�
 
 ## Data Cleaning:
 
-Most data cleaning processes are done in our EDA project, which is included in this website. On top of that, we have implemented some additional data cleanings to facilitate our prediction.
+Most data cleaning processes are done in our EDA project, which is included in [this website](https://zaczhou0928.github.io/recipeanalysis/). On top of that, we have implemented some additional data cleanings to facilitate our prediction.
 
 Adding columns: We added **‘tags’** column back.
 
@@ -124,6 +124,14 @@ One-Hot Encoding of Tags: We extract **'time-to-make'** and **'easy'** from the 
 ## Hyperparameters
 
 The hyperparameter tuning was methodically conducted using GridSearchCV with 4 folds, and we tuned a combination of the max depth, number of estimators, and the criterion for the Random Forest to find a combination that led a model that generalized the best to unseen data.
+
+Here's the hyperparameters we tested for the Regressor:
+```
+hyperparameters = {'Forest__max_depth': np.arange(1, 21, 1),
+                   'Forest__n_estimators': np.arange(100, 501, 125),
+                   'Forest__criterion': ['friedman_mse', 'poisson'],
+                   'Forest__n_jobs': [-1]}
+```
 
 Below is a performance table summarizing the test results for different hyperparameters:
 
