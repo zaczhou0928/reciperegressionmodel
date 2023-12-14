@@ -319,7 +319,7 @@ In assessing the fairness of our final model, we posed the question: Does our mo
 - **Group X**: Recipes tagged with 'Healthy'.
 - **Group Y**: Recipes not tagged with 'Healthy'.
 
-We selected the R-squared value as our **evaluation metric** because it quantifies the proportion of variance in the predicted variable that is captured by the model.
+We selected the **R-squared value** as our **evaluation metric** because it quantifies the proportion of variance in the predicted variable that is captured by the model.
 
 Our **null hypothesis** posited that the model is equitable in its predictions: The R-squared values for recipes in both groups would be equivalent, indicating unbiased performance.
 
@@ -336,7 +336,7 @@ We set a **significance level** at 0.05, which is a standard threshold for detec
 - **Observed Difference**: 0.017778429698646736
 - **P-value**: 0.02
 
-The p-value obtained from our permutation test was 0.02, which is below the significance level of 0.05. This result suggests there is statistical evidence to reject the null hypothesis in favor of the alternative hypothesis, indicating a potential disparity in the model's performance between healthy and non-healthy recipes. However, this does not irrefutably prove bias; it simply implies that, under the framework of our test, there is a likelihood that the model performs differently for the two groups.
+The p-value obtained from our permutation test was 0.02, which is below the significance level of 0.05. This result suggests there is statistical evidence to reject the null hypothesis in favor of the alternative hypothesis, indicating a **potential** disparity in the model's performance between healthy and non-healthy recipes. However, this does not irrefutably prove bias; it simply implies that, under the framework of our test, there is a **likelihood** that the model performs differently for the two groups.
 
 Given these findings, we might consider examining the model further to understand the sources of this discrepancy and explore ways to ensure that it performs equitably across different recipe categories.
 
