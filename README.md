@@ -312,6 +312,34 @@ The performance of our final model is as follow:
 
 The performance demonstrates a clear improvement over the baseline model. With an R-Squared score of approximately 0.33 on both the training and testing datasets, the final model accounts for a third of the variance in the number of recipe steps, a substantial increase from the baseline model's 0.22. This improvement indicates that the additional features and the robustness of the Random Forest Regressor have captured more of the underlying patterns within our data.
 
-# Fairness
+# Fairness Analysis
+
+In assessing the fairness of our final model, we posed the question: Does our model predict the number of steps (`n_steps`) for recipes more accurately when they are tagged 'healthy' compared to those not tagged 'healthy'? To address this, we implemented a permutation test with the following parameters:
+
+- **Group X**: Recipes tagged with 'Healthy'.
+- **Group Y**: Recipes not tagged with 'Healthy'.
+
+We selected the R-squared value as our **evaluation metric** because it quantifies the proportion of variance in the predicted variable that is captured by the model.
+
+Our **null hypothesis** posited that the model is equitable in its predictions: The R-squared values for recipes in both groups would be equivalent, indicating unbiased performance.
+
+Conversely, the **alternative hypothesis** suggested that the model is biased: The R-squared values for recipes would differ significantly between the two groups.
+
+The **test statistic** was the absolute difference in R-squared values between Group X and Group Y.
+
+We set a **significance level** at 0.05, which is a standard threshold for detecting a meaningful discrepancy in statistical testing.
+
+**Results**:
 
 <iframe src="assests/permutation.html" width=800 height=600 frameBorder=0></iframe>
+
+- **Observed Difference**: 0.017778429698646736
+- **P-value**: 0.02
+
+The p-value obtained from our permutation test was 0.02, which is below the significance level of 0.05. This result suggests there is statistical evidence to reject the null hypothesis in favor of the alternative hypothesis, indicating a potential disparity in the model's performance between healthy and non-healthy recipes. However, this does not irrefutably prove bias; it simply implies that, under the framework of our test, there is a likelihood that the model performs differently for the two groups.
+
+Given these findings, we might consider examining the model further to understand the sources of this discrepancy and explore ways to ensure that it performs equitably across different recipe categories.
+
+**Conclusion**:
+
+In conclusion, while our permutation test results indicate a statistically significant difference in the performance of our model between recipes tagged 'healthy' and those not, this does not conclusively establish bias. It does, however, warrant a closer look into the model's behavior and suggests that adjustments may be necessary to achieve fairer outcomes.
