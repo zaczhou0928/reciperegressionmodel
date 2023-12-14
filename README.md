@@ -1,4 +1,5 @@
 # Recipe N-steps Prediction Model 
+by Qianjin Zhou and Haohan Zou
 
 # Framing the problem
 
