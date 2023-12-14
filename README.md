@@ -330,6 +330,7 @@ The **test statistic** was the absolute difference in R-squared values between G
 We set a **significance level** at 0.05, which is a standard threshold for detecting a meaningful discrepancy in statistical testing.
 
 **Results**:
+Below is a distribution of our test statistics from the permutation test.
 
 <iframe src="assests/permutation.html" width=800 height=600 frameBorder=0></iframe>
 
