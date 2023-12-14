@@ -56,9 +56,8 @@ Considering that the number of ingredients (**'n_ingredients'**) might have a no
 
 The model's performance was evaluated using the R-squared metric, and the results are as follow:
 
-**R-Squared for training dataset: 0.22499407649086567**
-
-**R-Squared for testing dataset: 0.22170387130263502**
+**R-Squared for training dataset: 0.2298318956507721**
+**R-Squared for testing dataset: 0.23454040104808938**
 
 These scores indicate that around 22% of the variance in the number of steps can be explained by the model for both the training and testing sets.
 
@@ -314,9 +313,8 @@ These parameters were selected because they balance the bias-variance trade-off 
 
 The performance of our final model is as follow:
  
-**R-Squared for training dataset: 0.3342440985781123**
-
-**R-Squared for testing dataset: 0.3338380115944084**
+**R-Squared for training dataset: 0.33910338100218707**
+**R-Squared for testing dataset: 0.32649396208975057**
 
 The performance demonstrates a clear improvement over the baseline model. With an R-Squared score of approximately 0.33 on both the training and testing datasets, the final model accounts for a third of the variance in the number of recipe steps, a substantial increase from the baseline model's 0.22. This improvement indicates that the additional features and the robustness of the Random Forest Regressor have captured more of the underlying patterns within our data.
 
@@ -342,8 +340,8 @@ Below is a distribution of our test statistics from the permutation test.
 
 <iframe src="assests/permutation.html" width=800 height=600 frameBorder=0></iframe>
 
-- **Observed Difference**: 0.017778429698646736
-- **P-value**: 0.02
+- **Observed Difference**: 0.017742070525936127
+- **P-value**: 0.018
 
 The p-value obtained from our permutation test was 0.02, which is below the significance level of 0.05. This result suggests there is statistical evidence to reject the null hypothesis in favor of the alternative hypothesis, indicating a **potential** disparity in the model's performance between healthy and non-healthy recipes. However, this does not irrefutably prove bias; it simply implies that, under the framework of our test, there is a **likelihood** that the model performs differently for the two groups.
 
